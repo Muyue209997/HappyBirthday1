@@ -18,16 +18,16 @@ class Particle {
         this.color = color;
         this.angle = angle;
         this.speed = speed;
-        this.size = Math.random() * 3 + 2; // 粒子更大（适配手机）
+        this.size = Math.random() * 3 + 2; // 手机端更清晰
         this.alpha = 1;
-        this.gravity = 0.01; // 重力更柔和
+        this.gravity = 0.01;
     }
 
     update() {
         this.x += Math.cos(this.angle) * this.speed;
         this.y += Math.sin(this.angle) * this.speed + this.gravity;
-        this.speed *= 0.97; // 更柔和的速度衰减
-        this.alpha -= 0.012; // 更柔和的消失
+        this.speed *= 0.97;
+        this.alpha -= 0.012;
     }
 
     draw() {
@@ -50,7 +50,7 @@ class Firework {
 
         for (let i = 0; i < particleCount; i++) {
             const angle = Math.random() * Math.PI * 2;
-            const speed = Math.random() * 2 + 1.2; // 手机端更柔和
+            const speed = Math.random() * 2 + 1.2;
             const color = this.colors[Math.floor(Math.random() * this.colors.length)];
             this.particles.push(new Particle(this.x, this.y, color, angle, speed));
         }
@@ -72,9 +72,8 @@ class Firework {
 
 // 动画循环
 function animate() {
-    // 使用半透明黑色残影，不刺眼
-    ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // 不填充任何颜色，让 canvas 背景保持透明
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     fireworks.forEach((fw, index) => {
         fw.update();
