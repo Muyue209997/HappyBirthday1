@@ -361,3 +361,28 @@ canvas {
   padding: 1rem 1.6rem;
   cursor: pointer;
 }
+/* 手机端适配（屏幕宽度小于 600px） */
+@media (max-width: 600px) {
+  .baloons img {
+    width: 80px;      /* 气球变小，不会被裁切 */
+    height: auto;
+    display: inline-block;
+    position: absolute;
+  }
+
+  /* 偶数气球 → 靠左，但不离开屏幕 */
+  .baloons img:nth-child(even) {
+    left: 5%;
+  }
+
+  /* 奇数气球 → 靠右，但不离开屏幕 */
+  .baloons img:nth-child(odd) {
+    right: 5%;
+  }
+
+  /* 每三个一个 → 居中位置 */
+  .baloons img:nth-child(3n + 0) {
+    left: 40%;
+    right: auto;
+  }
+}
