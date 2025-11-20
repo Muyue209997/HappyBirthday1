@@ -364,7 +364,7 @@ canvas {
 /* 手机端适配（屏幕宽度小于 600px） */
 @media (max-width: 700px) {
   .baloons img {
-    width: 200px;      /* 气球变小，不会被裁切 */
+    width: 370px;      /* 气球变小，不会被裁切 */
     height: auto;
     display: inline-block;
     position: absolute;
