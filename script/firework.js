@@ -18,7 +18,7 @@
                 this.color = color;
                 this.angle = angle;
                 this.speed = speed;
-                this.size = Math.random() * 2 + 1; // 粒子大小
+                this.size = Math.random() * 1.1 + 1; // 粒子大小
                 this.alpha = 1; // 透明度
                 this.gravity = 0.02; // 重力
             }
