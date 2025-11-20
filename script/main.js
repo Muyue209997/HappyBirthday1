@@ -287,18 +287,19 @@ const animationTimeline = () => {
       },
       "party"
     )
-    .staggerTo(
-      ".eight svg",
-      1.5,
-      {
-        visibility: "visible",
-        opacity: 0,
-        scale: 80,
-        repeat: 3,
-        repeatDelay: 1.4
-      },
-      0.3
-    )
+   .staggerTo(
+  ".eight svg",
+  2.5,   // 原来 1.5 → 扩散速度更慢
+  {
+    visibility: "visible",
+    opacity: 0,
+    scale: 80,
+    repeat: 3,
+    repeatDelay: 2.0   // 原来 1.4 → 间隔更长
+  },
+  0.5    // 原来 0.3 → 多圈之间节奏更慢
+)
+
     .to(".six", 0.5, {
       opacity: 0,
       y: 30,
