@@ -18,7 +18,7 @@
                 this.color = color;
                 this.angle = angle;
                 this.speed = speed;
-                this.size = Math.random() * 1.1 + 1; // 粒子大小
+                this.size = Math.random() * 0.5 + 1; // 粒子大小
                 this.alpha = 1; // 透明度
                 this.gravity = 0.02; // 重力
             }
@@ -26,7 +26,7 @@
             update() {
                 this.x += Math.cos(this.angle) * this.speed;
                 this.y += Math.sin(this.angle) * this.speed;
-                this.speed *= 0.98; // 速度衰减
+                this.speed *= 0.93; // 速度衰减
                 this.alpha -= 0.015; // 逐渐消失
                 this.speed -= this.gravity; // 应用重力
             }
@@ -51,7 +51,7 @@
 
                 for (let i = 0; i < particleCount; i++) {
                     const angle = Math.random() * Math.PI * 2; // 随机角度
-                    const speed = Math.random() * 3 + 2; // 随机速度
+                    const speed = Math.random() * 1.4 + 2; // 随机速度
                     const color = this.colors[Math.floor(Math.random() * this.colors.length)];
                     this.particles.push(new Particle(this.x, this.y, color, angle, speed));
                 }
